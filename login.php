@@ -12,8 +12,14 @@ require_once("config.php");
             //header("location: ok.html");
             if(password_verify($_POST["password"],$radek["password"])){
                 echo("ok");
+                $dotaz = $dotaz = "SELECT * FROM maturita01_uzivatele WHERE username = '" . $username . "'";
+                $odpoved = mysqli_query($spojeni, $dotaz);
+                $radek = mysqli_fetch_assoc($odpoved);
+                mysqli_close($spojeni);
+                //echo($dotaz);
                 session_start();
                 $_SESSION["user"] = $username;
+                $_SESSION["user_id"] = $radek["id"];
                 header("location: dash.php");
             }else{
                 echo("Nesprávné heslo");
