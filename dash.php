@@ -16,6 +16,7 @@ if($_SESSION["user"] != ""){
     echo("Jsi: " . $_SESSION["user"] . "<br>");
     //echo($_SESSION["user_id"]);
     echo("<br>");
+    echo("<hr>");
     require_once("config.php");
     $spojeni = mysqli_connect(dbhost,dbuser,dbpass,dbname);
 
@@ -27,12 +28,14 @@ if($_SESSION["user"] != ""){
         $title = $radek["title"];
         $mark = $radek["mark"];
         $id = $radek["id"];
+        $datetime = $radek["datetime"];
         if($mark){
             echo("<h3 style='color: red;'>" . $title . "</h3>");
         }
         else{
             echo("<h4>" . $title . "</h4>");
         }
+        echo("<h6>" . $datetime . "</h6>");
         echo('<a href="delnote.php?id=' . $id . '">' . 'Smazat</a>');
         echo("<br>");
         echo('<a href="marknote.php?id=' . $id . '">' . 'Hvezdicka</a>');
