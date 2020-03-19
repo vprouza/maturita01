@@ -27,6 +27,7 @@ if($_SESSION["user"] != ""){
         $mark = $radek["mark"];
         $id = $radek["id"];
         echo("<h1>" . $title . "</h1>");
+        echo('<a href="delnote.php?id=' . $id . '">' . $id . 'Smazat</a>');
         echo("<br>");
     }
 }else{
@@ -34,6 +35,6 @@ if($_SESSION["user"] != ""){
 }
 ?>
 
-
+<a href="delnote.php?id="></a>
 </body>
 </html>
