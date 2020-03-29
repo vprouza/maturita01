@@ -36,6 +36,8 @@ if($_SESSION["user"] != ""){
             echo("<h4>" . $title . "</h4>");
         }
         echo("<h6>" . $datetime . "</h6>");
+        echo('<a href="detail.php?id=' . $id . '">' . 'Detail</a>');
+        echo("<br>");
         echo('<a href="delnote.php?id=' . $id . '">' . 'Smazat</a>');
         echo("<br>");
         echo('<a href="marknote.php?id=' . $id . '">' . 'Hvezdicka</a>');
